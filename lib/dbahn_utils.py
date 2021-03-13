@@ -80,7 +80,7 @@ class BahnUtils:
         return details
 
 
-    def filter_by_id(self, _fpath : Path, ids_to_filter : List[String], filter_channels : List[String], additional_detail_fields : List[String]) -> Dict:
+    def filter_by_id(self, _fpath, ids_to_filter, filter_channels, additional_detail_fields):
         """
         function filters based on app_uuid and filter_channels. It appends the 'additional_detail_fields'
 
@@ -126,3 +126,4 @@ class BahnUtils:
                 lines_by_id[data_split[header.index('app_uuid')]].append(new_line)
 
         return lines_by_id
+    
