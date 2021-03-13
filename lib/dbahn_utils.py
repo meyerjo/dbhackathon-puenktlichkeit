@@ -2,6 +2,8 @@ import os
 import re
 from collections import defaultdict
 from pathlib import Path
+from tokenize import String
+from typing import List, Dict
 
 
 class BahnUtils:
@@ -78,7 +80,17 @@ class BahnUtils:
         return details
 
 
-    def filter_by_id(self, _fpath, ids_to_filter, filter_channels, additional_detail_fields):
+    def filter_by_id(self, _fpath : Path, ids_to_filter : List[String], filter_channels : List[String], additional_detail_fields : List[String]) -> Dict:
+        """
+        function filters based on app_uuid and filter_channels. It appends the 'additional_detail_fields'
+
+        :param _fpath: filepath to read
+        :param ids_to_filter: list of ids as string to
+        :param filter_channels: list of channels
+        :param additional_detail_fields: list of additional_detail_fields
+        :return:
+        :rtype:
+        """
         lines_by_id = defaultdict(list)
         i = 0
         header = None
